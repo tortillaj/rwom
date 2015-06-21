@@ -1,0 +1,48 @@
+%site-max-width {
+  max-width: 94%;
+  margin: 0 auto;
+
+  @include breakpoint($bp-large) {
+    max-width: 96%;
+    margin: 0 auto;
+  }
+
+  @include breakpoint($bp-desktop) {
+    max-width: $site-width;
+    margin: 0 auto;
+  }
+}
+
+%center-aligned-row-flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+%vertically-aligned-flexbox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  overflow: hidden;
+}
+
+%no-margins {
+  margin: 0;
+}
+
+%no-dangling {
+  &:first-child,
+  &:first-of-type {
+    margin-top: 0;
+  }
+  &:last-child,
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

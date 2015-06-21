@@ -1,0 +1,23 @@
+.site-main {
+  padding-top: $header-height;
+  position: relative;
+
+  &__header-inner {
+    @extend %vertically-aligned-flexbox;
+    @extend %site-max-width;
+    text-align: center;
+    height: $page-header-height;
+  }
+
+  &__header {
+    height: $page-header-height;
+  }
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.7;
+  }
+}

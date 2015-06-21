@@ -1,0 +1,185 @@
+@mixin hamburger-color($color: $zivtech-white) {
+  background-color: $color;
+  &:before,
+  &:after {
+    background-color: $color;
+  }
+}
+
+.site-header {
+  background-color: $off-black;
+  color: $off-white;
+  height: $header-height;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backface-visibility: hidden;
+
+  &__inner-wrapper {
+    @extend %site-max-width;
+    position: relative;
+    margin: 0 auto;
+    height: $header-height;
+  }
+
+  &__bar {
+    position: relative;
+    z-index: 300;
+    width: 100%;
+    height: 80px;
+    background: transparent;
+  }
+
+  &__logo {
+    display: block;
+    width: 175px;
+    height: 92px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    color: $off-white;
+  }
+
+  &__toggle {
+    padding: 45px 24px 25px 48px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: $header-height;
+    width: 100px;
+    cursor: pointer;
+    z-index: 300;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__hamburger {
+    background-color: $off-white;
+    width: 25px;
+    height: 5px;
+    display: block;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.7, 0, 0.36, 0.63);
+
+    &:before, &:after {
+      background-color: $off-white;
+      display: block;
+      content: "";
+      width: 25px;
+      height: 5px;
+      position: absolute;
+      transition: all 0.3s cubic-bezier(0.7, 0, 0.36, 0.63);
+    }
+
+    &:before {
+      top: -8px;
+    }
+
+    &:after {
+      top: 8px;
+    }
+  }
+
+  &__navigation {
+    display: table;
+    z-index: 200;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+    max-width: 100%;
+  }
+
+  .main-menu {
+    @include element-invisible;
+    transform: perspective(400px) rotateX(20deg);
+    transition: all 0.3s cubic-bezier(0.7, 0, 0.36, 0.63);
+  }
+
+  //
+  // the menu is opening
+  //
+  &.is-opening {
+    .main-menu {
+      transform: perspective(250px) rotateX(30deg) scale(0.6);
+      opacity: 0;
+    }
+  }
+
+
+  //
+  // the menu is completely open
+  //
+  &.open {
+    height: 100%;
+
+    .region--navigation {
+      background-color: rgba($blue, 0.95);
+    }
+
+    .main-menu {
+      @include element-invisible-off;
+      opacity: 1;
+      display: table-cell;
+      // vertical-align: middle;
+      width: 100%;
+      padding-top: 80px;
+      transform: perspective(400px) rotateX(0deg) scale(1);
+      transition: all 0.5s cubic-bezier(0.63, 0.64, 0.3, 1);
+    }
+
+    .site-header__hamburger {
+      @include hamburger-color($off-white);
+      background-color: transparent;
+      &:before,
+      &:after {
+        top: 0;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  //
+  // the menu is closing
+  //
+  &.is-closing {
+    height: 100%;
+
+    .region--navigation {
+      background-color: transparent;
+    }
+
+    .main-menu {
+      opacity: 0;
+      transform: perspective(600px) rotateX(-30deg) scale(0.6);
+      transition: all 0.5s cubic-bezier(0.63, 0.64, 0.3, 1);
+    }
+  }
+}
+
+body.solid-main-menu {
+  .site-header {
+    &:not(.open) {
+      .site-header__bar {
+        transition: all .2s ease-in-out;
+        opacity: .95;
+        filter: drop-shadow(0 3px 2px rgba(0,0,0,0.1));
+        background: #fff;
+      }
+      .site-header__hamburger {
+        @include hamburger-color($off-black);
+      }
+    }
+  }
+}

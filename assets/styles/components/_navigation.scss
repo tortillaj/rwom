@@ -1,0 +1,43 @@
+.main-menu {
+  text-align: center;
+
+  .menu ul {
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid rgba($off-white, 0.25);
+  }
+
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: all 0.45s cubic-bezier(0.7, 0, 0.36, 0.63);
+    @include breakpoint($bp-small) {
+      padding: 12px 0;
+    }
+    &:hover {
+      background: rgba(white, 0.4);
+    }
+  }
+
+  a {
+    color: white;
+    font-size: 5vh;
+    letter-spacing: 0.03em;
+    font-family: $header-font-family;
+    padding: 2vh 8vw;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+    @include breakpoint($bp-small) {
+      font-size: 3vh;
+      padding: 1vh 4vw;
+    }
+  }
+
+
+}

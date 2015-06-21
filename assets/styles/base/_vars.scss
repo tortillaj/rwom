@@ -1,0 +1,30 @@
+$site-width: 1200px;
+$header-height: 80px;
+$page-header-height: 500px;
+
+$bp-small: 480px / 16px * 1em;
+$bp-medium: 768px / 16px * 1em;
+$bp-large: 1024px / 16px * 1em;
+$bp-desktop: 1200px / 16px * 1em;
+
+$off-black: #4d4d4d;
+$off-white: #f7f7f7;
+$blue: #235ca2;
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600|Montserrat:700,400);
+$header-font-family: "Montserrat", Georgia, serif;
+$body-text-font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+$base-font-color: $off-black;
+$base-font-size: 62.5%;
+$base-line-height: 1.5;
+$body-font-size: 16px;
+$base-font-size: $body-font-size;
+$h1-font-size: 42px;
+$h2-font-size: 32px;
+$h3-font-size: 1.5  * $body-font-size;
+$h4-font-size: 1.2  * $body-font-size;
+$h5-font-size: 0.83 * $body-font-size;
+$h6-font-size: 0.75 * $body-font-size;
+$link-color: $blue;
+$link-color-hover: darken($link-color, 5%);

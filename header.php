@@ -19,18 +19,20 @@
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rwom' ); ?></a>
 
 <header class="site-header" role="banner">
-  <div class="site-header__branding">
-    <h1 class="site-header__title">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+  <div class="site-header__bar">
+    <div class="site-header__inner-wrapper">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Home" rel="home" class="site-header__logo">
         <?php bloginfo( 'name' ); ?>
       </a>
-    </h1>
+      <a id="toggleMenu" class="site-header__toggle toggle-menu-processed">
+        <span class="site-header__hamburger"></span>
+      </a>
+    </div>
   </div>
-
-  <nav class="site-header__navigation" role="navigation">
-    <button class="menu-toggle" aria-controls="primary-menu"
-            aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'rwom' ); ?></button>
-    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-  </nav>
-
+  <div class="site-header__navigation">
+    <nav class="site-navigation main-menu" aria-labelledby="mainMenuLabel" tabindex="-1" role="navigation">
+      <h3 class="u-hidden" id="mainMenuLabel">Main Navigation Menu:</h3>
+      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+    </nav>
+  </div>
 </header>

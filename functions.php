@@ -37,12 +37,17 @@ add_action( 'widgets_init', 'rwom_widgets_init' );
  * Enqueue scripts and styles.
  */
 function rwom_scripts() {
-	wp_enqueue_style( 'rwom-style', get_template_directory_uri() . '/assets/styles/build/rwom.min.css' );
+  $asset_version = strtotime('2015-06-21');
 
-	wp_enqueue_script( 'rwom-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_style( 'rwom-style', get_template_directory_uri() . '/assets/styles/build/rwom.css', array(), $asset_version );
 
-	wp_enqueue_script( 'rwom-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+  wp_enqueue_script( 'rwom-vendor', get_template_directory_uri() . '/assets/js/build/scripts.min.js', array('jquery'), $asset_version, true );
+
+	wp_enqueue_script( 'rwom-scripts', get_template_directory_uri() . '/assets/js/build/main.min.js', array('rwom-vendor'), $asset_version, true );
 
 }
 add_action( 'wp_enqueue_scripts', 'rwom_scripts' );
 
+if (is_page() || is_single()) {
+  $custom_fields = acf_get_fields();
+}
