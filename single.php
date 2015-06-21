@@ -1,0 +1,28 @@
+<?php
+/**
+ * The template for displaying all single posts.
+ *
+ * @package Real World of Math
+ */
+
+get_header(); ?>
+
+<main class="site-main" role="main">
+
+  <?php if ( have_posts() ) : ?>
+
+    <?php while ( have_posts() ) : the_post(); ?>
+
+      <?php include( locate_template( 'templates/content/content.php' ) ); ?>
+
+    <?php endwhile; ?>
+
+  <?php else : ?>
+
+    <?php include( locate_template( 'templates/content/none.php' ) ); ?>
+
+  <?php endif; ?>
+
+</main><!-- #main -->
+
+<?php get_footer(); ?>
