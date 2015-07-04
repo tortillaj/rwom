@@ -394,18 +394,18 @@ th {
   padding: 0;
 }
 
-.site-header__inner-wrapper, .site-main__header-inner {
+.site-header__inner-wrapper, .site-main__header-inner, .module-carousel {
   max-width: 94%;
   margin: 0 auto;
 }
 @media (min-width: 64em) {
-  .site-header__inner-wrapper, .site-main__header-inner {
+  .site-header__inner-wrapper, .site-main__header-inner, .module-carousel {
     max-width: 96%;
     margin: 0 auto;
   }
 }
 @media (min-width: 75em) {
-  .site-header__inner-wrapper, .site-main__header-inner {
+  .site-header__inner-wrapper, .site-main__header-inner, .module-carousel {
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -894,6 +894,22 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
   }
 }
 
+.page-header__text ul {
+  margin: 0;
+  padding: 0;
+}
+.page-header__text ul li {
+  display: inline-block;
+  list-style-type: none;
+  font-style: italic;
+}
+.page-header__text a {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #235ca2;
+  text-decoration: none;
+}
+
 body * {
   box-sizing: border-box;
 }
@@ -915,6 +931,119 @@ body * {
   left: 0;
   z-index: -1;
   opacity: 0.7;
+}
+
+/* The Preloader in the Slider */
+#iCarousel-preloader {
+  position: absolute;
+  z-index: 1000;
+  border-radius: 3px;
+  border: #000 1px solid;
+  border-color: rgba(0, 0, 0, 0.6);
+  padding: 1px;
+  width: 150px;
+  height: 3px;
+}
+
+#iCarousel-preloader div {
+  float: left;
+  border-radius: 3px;
+  height: 3px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.6);
+  width: 0px;
+}
+
+/* The timer in the Slider */
+#iCarousel-timer {
+  position: absolute;
+  z-index: 1000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#iCarousel-timer div {
+  border-radius: 3px;
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+#carousel {
+  width: 960px;
+  height: 540px;
+  position: relative;
+  margin: 20px auto;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+#carousel .slide {
+  display: block;
+  border-radius: 4px;
+  border: 5px #000 solid;
+  width: 960px;
+  height: 540px;
+  -webkit-filter: grayscale(0.9);
+          filter: grayscale(0.9);
+}
+#carousel .slide.current {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.module-carousel {
+  overflow: hidden;
+}
+.module-carousel__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.module-carousel__title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+/* The Navigation buttons in the Slider */
+a.iCarouselNav {
+  display: block;
+  position: absolute;
+  top: 178px;
+  width: 43px;
+  height: 43px;
+  background: url(../img/arrows.png) no-repeat;
+  z-index: 1000;
+  text-indent: -9999px;
+}
+
+a#iCarouselPrev {
+  left: 10px;
+  background-position: left top;
+}
+
+a#iCarouselPrev:hover {
+  background-position: left bottom;
+}
+
+a#iCarouselNext {
+  right: 10px;
+  background-position: right top;
+}
+
+a#iCarouselNext:hover {
+  background-position: right bottom;
 }
 
 body {

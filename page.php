@@ -10,6 +10,8 @@
  * @package Real World of Math
  */
 
+$custom_fields = get_fields();
+
 get_header(); ?>
 
 <main class="site-main" role="main">

@@ -20,6 +20,8 @@ get_header(); ?>
 
       <?php include( locate_template( 'templates/content/content.php' ) ); ?>
 
+      <?php echo $custom_fields['contact_form']; ?>
+
     <?php endwhile; ?>
 
   <?php else : ?>

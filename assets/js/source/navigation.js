@@ -104,5 +104,20 @@ var RWOM = {};
       x_colors: 'PuBu'
     });
     $('.site-main__header').append(pattern.canvas());
+
+    if (window.innerWidth > 1200) {
+      $('#carousel').iCarousel({
+        slides: 5,
+        slidesSpace: 200,
+        pauseOnHover: true,
+        timer: "360Bar",
+        timerPadding: 3,
+        timerOpacity: 0.5,
+        timerColor: "#0F0",
+        timerX: 15,
+        mouseWheel: false,
+        timerY: 30
+      });
+    }
   });
 })(jQuery);

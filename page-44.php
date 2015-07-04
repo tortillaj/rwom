@@ -11,6 +11,8 @@
  * @package Real World of Math
  */
 
+$custom_fields = get_fields();
+
 get_header(); ?>
 
 <main class="site-main" role="main">
@@ -21,7 +23,22 @@ get_header(); ?>
 
     <?php while ( have_posts() ) : the_post(); ?>
 
-      <?php include( locate_template( 'templates/content/excerpt.php' ) ); ?>
+      <?php $modules = rwom_get_modules(); ?>
+
+        <?php if (!empty($modules)): ?>
+      <div class="module-carousel slide-container">
+        <div id="carousel" class="module-carousel__slides">
+          <?php foreach ($modules as $module): ?>
+          <div class="slide module-carousel__slide">
+            <a class="module-carousel__link">
+            <?php echo $module['image']; ?>
+            <span class="module-carousel__title"><?php echo $module['title']; ?></span>
+            </a>
+          </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+        <?php endif; ?>
 
     <?php endwhile; ?>
 

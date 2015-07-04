@@ -1,0 +1,20 @@
+.page-header {
+  &__text {
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        list-style-type: none;
+        font-style: italic;
+      }
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid $blue;
+      text-decoration: none;
+    }
+  }
+}
