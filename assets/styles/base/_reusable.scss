@@ -46,3 +46,9 @@
     margin-bottom: 0;
   }
 }
+
+%half-width-table-cell {
+  display: table-cell;
+  width: 50%;
+  vertical-align: top;
+}

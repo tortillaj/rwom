@@ -817,6 +817,39 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
   background-color: #4d4d4d;
 }
 
+.module-details {
+  display: table;
+  width: 100%;
+}
+@media (min-width: 48em) {
+  .module-details__image {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+  }
+  .module-details__image img {
+    text-align: right;
+    margin-right: 30px;
+  }
+}
+.module-details__features {
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 48em) {
+  .module-details__features {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+  }
+}
+.module-details__feature {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 0 0 0.5em;
+}
+
 .main-menu {
   text-align: center;
 }

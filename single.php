@@ -5,6 +5,9 @@
  * @package Real World of Math
  */
 
+
+$custom_fields = get_fields();
+
 get_header(); ?>
 
 <main class="site-main" role="main">
@@ -12,6 +15,8 @@ get_header(); ?>
   <?php if ( have_posts() ) : ?>
 
     <?php while ( have_posts() ) : the_post(); ?>
+
+      <?php include( locate_template( 'templates/header/module.php' ) ); ?>
 
       <?php include( locate_template( 'templates/content/content.php' ) ); ?>
 

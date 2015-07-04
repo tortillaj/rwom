@@ -17,6 +17,10 @@ function rwom_setup() {
 		'gallery',
 		'caption',
 	) );
+
+  // Create image sizes
+  add_image_size( 'large-slide', 1024, 624 );
+  add_image_size( 'small-slide', 500, 281 );
 }
 add_action( 'after_setup_theme', 'rwom_setup' );
 
@@ -47,7 +51,3 @@ function rwom_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'rwom_scripts' );
-
-if (is_page() || is_single()) {
-  $custom_fields = acf_get_fields();
-}
