@@ -105,7 +105,7 @@ var RWOM = {};
     });
     $('.site-main__header').append(pattern.canvas());
 
-    if (window.innerWidth > 1200) {
+    if (window.innerWidth > 1024) {
       $('#carousel').iCarousel({
         slides: 5,
         slidesSpace: 200,
