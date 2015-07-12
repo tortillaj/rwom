@@ -14,7 +14,7 @@ var RWOM = {};
         menuActive: false,
         menuBarSelector: '.site-header',
         toggleSelector: '#toggleMenu',
-        transitionSpeed: 75,
+        transitionSpeed: 50,
         hiddenMenuClass: 'hide-main-menu',
         solidMenuClass: 'solid-main-menu'
       });
@@ -100,24 +100,20 @@ var RWOM = {};
   $(document).ready(function() {
     var pattern = Trianglify({
       width: window.innerWidth,
-      height: 500,
+      height: 530,
       x_colors: 'PuBu'
     });
     $('.site-main__header').append(pattern.canvas());
 
-    if (window.innerWidth > 1024) {
-      $('#carousel').iCarousel({
-        slides: 5,
-        slidesSpace: 200,
-        pauseOnHover: true,
-        timer: "360Bar",
-        timerPadding: 3,
-        timerOpacity: 0.5,
-        timerColor: "#0F0",
-        timerX: 15,
-        mouseWheel: false,
-        timerY: 30
+    $(window).on('resize', debounce(function(e) {
+      var pattern = Trianglify({
+        width: window.innerWidth,
+        height: 530,
+        x_colors: 'PuBu'
       });
-    }
+      $('canvas').remove();
+      $('.site-main__header').append(pattern.canvas());
+    }));
   });
+
 })(jQuery);

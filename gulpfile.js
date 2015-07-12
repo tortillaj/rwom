@@ -45,11 +45,7 @@ gulp.task('styles', function () {
 gulp.task('plugins', function () {
   return gulp.src([
       'assets/js/source/scripts.js',
-      'assets/js/vendor/jquery.easing.1.3.js',
-      'assets/js/vendor/jquery.mousewheel.js',
-      'assets/js/vendor/raphael-min.js',
-      'assets/js/vendor/trianglify.js',
-      'assets/js/vendor/icarousel.packed.js'
+      'assets/js/vendor/trianglify.js'
     ])
     .pipe(plugins.concat('scripts.js'))
     .pipe(gulp.dest('assets/js/build'))

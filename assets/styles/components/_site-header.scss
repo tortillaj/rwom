@@ -7,8 +7,7 @@
 }
 
 .site-header {
-  background-color: $off-black;
-  color: $off-white;
+  color: $off-black;
   height: $header-height;
   position: fixed;
   width: 100%;
@@ -21,7 +20,6 @@
   &__inner-wrapper {
     @extend %site-max-width;
     position: relative;
-    margin: 0 auto;
     height: $header-height;
   }
 
@@ -38,10 +36,10 @@
     width: 175px;
     height: 92px;
     position: absolute;
-    top: 0;
+    top: $header-height / 2 - 10px;
     left: 0;
     z-index: 300;
-    color: $off-white;
+    color: $off-black;
   }
 
   &__toggle {
@@ -58,7 +56,7 @@
   }
 
   &__hamburger {
-    background-color: $off-white;
+    background-color: $off-black;
     width: 25px;
     height: 5px;
     display: block;
@@ -66,7 +64,7 @@
     transition: all 0.3s cubic-bezier(0.7, 0, 0.36, 0.63);
 
     &:before, &:after {
-      background-color: $off-white;
+      background-color: $off-black;
       display: block;
       content: "";
       width: 25px;
@@ -107,7 +105,7 @@
   //
   &.is-opening {
     .main-menu {
-      transform: perspective(250px) rotateX(30deg) scale(0.6);
+      transform: perspective(350px) rotateX(30deg) scale(0.6);
       opacity: 0;
     }
   }
@@ -125,9 +123,9 @@
 
     .main-menu {
       @include element-invisible-off;
-      opacity: 1;
       display: table-cell;
-      // vertical-align: middle;
+      opacity: 1;
+      background-color: rgba($blue, 0.95);
       width: 100%;
       padding-top: 80px;
       transform: perspective(400px) rotateX(0deg) scale(1);

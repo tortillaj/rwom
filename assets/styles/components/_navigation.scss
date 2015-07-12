@@ -21,7 +21,7 @@
   }
 
   a {
-    color: white;
+    color: $off-black;
     font-size: 5vh;
     letter-spacing: 0.03em;
     font-family: $header-font-family;
@@ -31,7 +31,7 @@
     margin-bottom: 0;
     &:hover {
       text-decoration: none;
-      color: white;
+      color: $off-black;
     }
     @include breakpoint($bp-small) {
       font-size: 3vh;

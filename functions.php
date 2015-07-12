@@ -21,7 +21,7 @@ function rwom_setup()
 
   // Create image sizes
   add_image_size( 'large-slide', 960, 540 );
-  add_image_size( 'small-slide', 500, 281 );
+  add_image_size( 'small-slide', 300, 250 );
 }
 
 add_action( 'after_setup_theme', 'rwom_setup' );
@@ -46,7 +46,7 @@ add_action( 'widgets_init', 'rwom_widgets_init' );
  */
 function rwom_scripts()
 {
-  $asset_version = strtotime( '2015-07-03' );
+  $asset_version = strtotime( '2015-07-05' );
 
   wp_enqueue_style( 'rwom-style', get_template_directory_uri() . '/assets/styles/build/rwom.css', array(), $asset_version );
 
@@ -68,11 +68,14 @@ function rwom_get_modules()
   if ($query->have_posts()) {
     while ($query->have_posts()) {
       $query->the_post();
+      $features = get_field('module_features', get_the_ID());
+      $random_key = (is_array($features)) ? array_rand($features) : false;
       $modules[] = array(
         'id' => get_the_ID(),
         'title' => get_the_title(),
         'link' => get_permalink(),
-        'image' => get_the_post_thumbnail(get_the_ID(), 'large-slide')
+        'image' => get_the_post_thumbnail(get_the_ID(), 'small-slide', array('class' => 'module-slides__image')),
+        'feature' => (false !== $random_key) ? $features[$random_key] : ''
       );
     }
   }

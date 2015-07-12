@@ -1,0 +1,10 @@
+.site-footer {
+  @include rem(font-size, 14px);
+  padding: 50px 0;
+  background-color: $off-black;
+  color: $off-white;
+
+  &__inner {
+    @extend %site-max-width;
+  }
+}

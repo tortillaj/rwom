@@ -2,15 +2,18 @@
   max-width: 94%;
   margin: 0 auto;
 
-  @include breakpoint($bp-large) {
+  @include breakpoint($bp-medium) {
     max-width: 96%;
-    margin: 0 auto;
   }
 
-  @include breakpoint($bp-desktop) {
-    max-width: $site-width;
-    margin: 0 auto;
+  @include breakpoint($bp-large) {
+    max-width: $content-width;
   }
+}
+
+%module-grid-image {
+  height: $module-grid-image-height;
+  width: $module-grid-image-width;
 }
 
 %center-aligned-row-flexbox {

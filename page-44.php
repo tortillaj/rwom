@@ -15,39 +15,59 @@ $custom_fields = get_fields();
 
 get_header(); ?>
 
-<main class="site-main" role="main">
+<main class="site-main home" role="main">
+  <header class="site-main__header">
+    <div class="site-main__header-inner">
+      \
+    </div>
+  </header>
 
-  <?php include( locate_template( 'templates/header/page.php' ) ); ?>
+  <div class="site-main__inner">
+    <h1 class="page-header__title"><?php the_title() ?></h1>
+    <section class="page-header__text"><?php echo $custom_fields['header_text']; ?></section>
 
-  <?php if ( have_posts() ) : ?>
+    <?php if ( have_posts() ) : ?>
 
-    <?php while ( have_posts() ) : the_post(); ?>
+      <?php while ( have_posts() ) : the_post(); ?>
 
-      <?php $modules = rwom_get_modules(); ?>
+        <?php $modules = rwom_get_modules(); ?>
 
-        <?php if (!empty($modules)): ?>
-      <div class="module-carousel slide-container">
-        <div id="carousel" class="module-carousel__slides">
-          <?php foreach ($modules as $module): ?>
-          <div class="slide module-carousel__slide">
-            <a class="module-carousel__link">
-            <?php echo $module['image']; ?>
-            <span class="module-carousel__title"><?php echo $module['title']; ?></span>
-            </a>
+        <?php if ( ! empty($modules) ): ?>
+          <div class="module-slides">
+            <?php foreach ( $modules as $module ): ?>
+              <div class="module-slides__slide">
+                <a class="module-slides__link" href="<?php echo $module['link']; ?>">
+                  <div class="module-slides__front">
+                  <?php echo $module['image']; ?>
+                  </div>
+                  <div class="module-slides__back">
+                    <span class="module-slides__title"><?php echo $module['title']; ?></span>
+                    <?php if (is_array($module['feature'])): ?>
+                    <span class="module-slides__feature"><?php echo $module['feature']['feature']; ?></span>
+                    <?php endif; ?>
+                    <span class="module-slides__learn-more">Learn More &raquo;</span>
+                  </div>
+                </a>
+              </div>
+            <?php endforeach; ?>
           </div>
-          <?php endforeach; ?>
-        </div>
-      </div>
         <?php endif; ?>
 
-    <?php endwhile; ?>
+          <div class="contact-form">
+            <h2 class="contact-form__title">Find out More!</h2>
+            <div class="contact-form__form">
+              <?php echo $custom_fields['contact_form']; ?>
+            </div>
+          </div>
 
-  <?php else : ?>
+      <?php endwhile; ?>
 
-    <?php include( locate_template( 'templates/content/none.php' ) ); ?>
+    <?php else : ?>
 
-  <?php endif; ?>
+      <?php include(locate_template( 'templates/content/none.php' )); ?>
 
+    <?php endif; ?>
+  </div>
 </main><!-- #main -->
 
 <?php get_footer(); ?>

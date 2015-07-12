@@ -1,16 +1,22 @@
 .site-main {
   padding-top: $header-height;
   position: relative;
+  //background: url('../../images/school.png') top left repeat $off-white;
 
   &__header-inner {
     @extend %vertically-aligned-flexbox;
     @extend %site-max-width;
     text-align: center;
-    height: $page-header-height;
+
+    @include breakpoint($bp-medium) {
+      height: $page-header-height;
+    }
   }
 
   &__header {
-    height: $page-header-height;
+    @include breakpoint($bp-medium) {
+      height: $page-header-height;
+    }
   }
 
   canvas {
@@ -19,5 +25,36 @@
     left: 0;
     z-index: -1;
     opacity: 0.7;
+  }
+
+  &.home {
+    .site-main__header {
+      @include breakpoint($bp-medium) {
+        background: url('../../images/characters-cropped.png') bottom center no-repeat transparent;
+        background-size: 900px;
+      }
+    }
+
+    .page-header__title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .page-header__text {
+      @extend .h3;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: normal;
+      padding: 0 30px;
+
+      a {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid $blue-dark;
+        text-decoration: none;
+        margin: 10px 0;
+        color: $blue-dark;
+      }
+    }
   }
 }
