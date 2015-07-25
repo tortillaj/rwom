@@ -10,9 +10,11 @@ body {
     max-width: 94%;
     margin: 0 auto;
     background-color: rgba($off-white, 0.9);
+    padding: 20px 0;
 
     @include breakpoint($bp-medium) {
       max-width: 96%;
+      margin-top: -100px;
     }
 
     @include breakpoint($bp-large) {
@@ -20,5 +22,14 @@ body {
       padding: 20px 30px;
       margin-top: -100px;
     }
+  }
+}
+
+.page-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+  @include breakpoint($bp-large) {
+    padding: 0;
   }
 }

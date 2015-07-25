@@ -18,7 +18,6 @@ get_header(); ?>
 <main class="site-main home" role="main">
   <header class="site-main__header">
     <div class="site-main__header-inner">
-      \
     </div>
   </header>
 

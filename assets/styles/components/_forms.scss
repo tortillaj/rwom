@@ -11,7 +11,7 @@ input, textarea {
 
   &:focus, &:active {
     box-shadow: 0 0 2px rgba($blue, 0.8);
-    background-color: $blue;
+    background-color: lighten($blue, 20%);
     color: $off-white;
   }
 }

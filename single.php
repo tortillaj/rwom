@@ -1,40 +1,48 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The main template file.
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package Real World of Math
  */
-
 
 $custom_fields = get_fields();
 
 get_header(); ?>
 
-<main class="site-main" role="main">
-
-  <?php if ( have_posts() ) : ?>
-
-    <?php while ( have_posts() ) : the_post(); ?>
-
-      <?php include( locate_template( 'templates/header/module.php' ) ); ?>
-
-      <?php include( locate_template( 'templates/content/content.php' ) ); ?>
-
-      <div class="contact-form">
-        <h2 class="contact-form__title">Find out More!</h2>
-        <div class="contact-form__form">
-          <?php echo $custom_fields['contact_form']; ?>
-        </div>
+  <main class="site-main home" role="main">
+    <header class="site-main__header">
+      <div class="site-main__header-inner">
       </div>
+    </header>
 
-    <?php endwhile; ?>
+    <div class="site-main__inner">
+      <h1 class="page-header__title"><?php the_title() ?></h1>
 
-  <?php else : ?>
 
-    <?php include( locate_template( 'templates/content/none.php' ) ); ?>
+      <?php if ( have_posts() ) : ?>
 
-  <?php endif; ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-</main><!-- #main -->
+          <?php //if (is_single('Module')): ?>
+          <?php include(locate_template( 'templates/content/module.php' )); ?>
+          <?php //endif; ?>
+
+          <?php include(locate_template( 'templates/content/content.php' )); ?>
+
+        <?php endwhile; ?>
+
+      <?php else : ?>
+
+        <?php include(locate_template( 'templates/content/none.php' )); ?>
+
+      <?php endif; ?>
+    </div>
+  </main><!-- #main -->
 
 <?php get_footer(); ?>

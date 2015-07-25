@@ -21,6 +21,7 @@ function rwom_setup()
 
   // Create image sizes
   add_image_size( 'large-slide', 960, 540 );
+  add_image_size( 'medium-slide', 430, 242 );
   add_image_size( 'small-slide', 300, 250 );
 }
 

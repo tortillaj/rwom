@@ -510,8 +510,8 @@ h6, .h6 {
 }
 
 h1, .h1 {
-  font-size: 21px;
-  font-size: 2.1rem;
+  font-size: 25px;
+  font-size: 2.47059rem;
 }
 @media (min-width: 48em) {
   h1, .h1 {
@@ -527,13 +527,13 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 18px;
-  font-size: 1.82857rem;
+  font-size: 21px;
+  font-size: 2.13333rem;
 }
 @media (min-width: 48em) {
   h2, .h2 {
-    font-size: 21px;
-    font-size: 2.13333rem;
+    font-size: 27px;
+    font-size: 2.66667rem;
   }
 }
 @media (min-width: 64em) {
@@ -544,13 +544,13 @@ h2, .h2 {
 }
 
 h3, .h3, .module-slides__title, .site-main.home .page-header__text {
-  font-size: 13px;
-  font-size: 1.33333rem;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 @media (min-width: 48em) {
   h3, .h3, .module-slides__title, .site-main.home .page-header__text {
-    font-size: 16px;
-    font-size: 1.6rem;
+    font-size: 18px;
+    font-size: 1.81818rem;
   }
 }
 @media (min-width: 64em) {
@@ -661,7 +661,7 @@ input, textarea {
 }
 input:focus, input:active, textarea:focus, textarea:active {
   box-shadow: 0 0 2px rgba(143, 202, 255, 0.8);
-  background-color: #8FCAFF;
+  background-color: #f5faff;
   color: #F7F7F7;
 }
 
@@ -876,17 +876,19 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
 .module-details {
   display: table;
   width: 100%;
+  padding: 10px 20px;
 }
 @media (min-width: 48em) {
   .module-details__image {
     display: table-cell;
     width: 50%;
     vertical-align: top;
+    padding: 10px 10px 10px 20px;
   }
-  .module-details__image img {
-    text-align: right;
-    margin-right: 30px;
-  }
+}
+.module-details__image img {
+  max-width: 100% !important;
+  height: auto !important;
 }
 .module-details__features {
   margin: 0;
@@ -897,6 +899,7 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
     display: table-cell;
     width: 50%;
     vertical-align: top;
+    padding: 10px 20px 10px 10px;
   }
 }
 .module-details__feature {
@@ -1089,10 +1092,12 @@ body * {
   max-width: 94%;
   margin: 0 auto;
   background-color: rgba(247, 247, 247, 0.9);
+  padding: 20px 0;
 }
 @media (min-width: 48em) {
   .site-main__inner {
     max-width: 96%;
+    margin-top: -100px;
   }
 }
 @media (min-width: 64em) {
@@ -1100,6 +1105,17 @@ body * {
     max-width: 985px;
     padding: 20px 30px;
     margin-top: -100px;
+  }
+}
+
+.page-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (min-width: 64em) {
+  .page-content {
+    padding: 0;
   }
 }
 
