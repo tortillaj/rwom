@@ -32,7 +32,19 @@
   <div class="site-header__navigation">
     <nav class="site-navigation main-menu" aria-labelledby="mainMenuLabel" tabindex="-1" role="navigation">
       <h3 class="u-hidden" id="mainMenuLabel">Main Navigation Menu:</h3>
-      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+      <div class="menu">
+      	<ul>
+      		<li class="page_item page-item-44 current_page_item">
+      			<a href="/">Home</a>
+      		</li>
+      		<li class="page_item page-item-33">
+      			<a href="/how-it-works">How It Works</a>
+      		</li>
+      		<li class="page_item page-item-31">
+      			<a href="/contact">Contact</a>
+      		</li>
+      	</ul>
+      </div>
     </nav>
   </div>
 </header>

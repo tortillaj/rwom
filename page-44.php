@@ -35,14 +35,14 @@ get_header(); ?>
           <div class="module-slides">
             <?php foreach ( $modules as $module ): ?>
               <div class="module-slides__slide">
-                <a class="module-slides__link" href="<?php echo $module['link']; ?>">
+                <a class="module-slides__link" href="/how-it-works">
                   <div class="module-slides__front">
                   <?php echo $module['image']; ?>
                   </div>
                   <div class="module-slides__back">
                     <span class="module-slides__title"><?php echo $module['title']; ?></span>
                     <?php if (is_array($module['feature'])): ?>
-                    <span class="module-slides__feature"><?php echo $module['feature']['feature']; ?></span>
+                    <!-- span class="module-slides__feature"><?php echo $module['feature']['feature']; ?></span -->
                     <?php endif; ?>
                     <span class="module-slides__learn-more">Learn More &raquo;</span>
                   </div>

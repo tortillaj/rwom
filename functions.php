@@ -23,6 +23,7 @@ function rwom_setup()
   add_image_size( 'large-slide', 960, 540 );
   add_image_size( 'medium-slide', 430, 242 );
   add_image_size( 'small-slide', 300, 250 );
+  add_image_size( 'module-image', 300, 169, true );
 }
 
 add_action( 'after_setup_theme', 'rwom_setup' );
@@ -76,7 +77,7 @@ function rwom_get_modules()
         'id' => get_the_ID(),
         'title' => get_the_title(),
         'link' => get_permalink(),
-        'image' => get_the_post_thumbnail(get_the_ID(), 'small-slide', array('class' => 'module-slides__image')),
+        'image' => get_the_post_thumbnail(get_the_ID(), 'module-image', array('class' => 'module-slides__image')),
         'feature' => (false !== $random_key) ? $features[$random_key] : ''
       );
     }
