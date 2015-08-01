@@ -48,7 +48,7 @@ add_action( 'widgets_init', 'rwom_widgets_init' );
  */
 function rwom_scripts()
 {
-  $asset_version = strtotime( '2015-07-05' );
+  $asset_version = strtotime( '2015-07-30' );
 
   wp_enqueue_style( 'rwom-style', get_template_directory_uri() . '/assets/styles/build/rwom.css', array(), $asset_version );
 
