@@ -9,7 +9,7 @@ $module-grid-image-height: 250px;
 $bp-small: 480px / 16px * 1em;
 $bp-medium: 768px / 16px * 1em;
 $bp-large: 1024px / 16px * 1em;
-$bp-desktop: 1200px / 16px * 1em;
+$bp-desktop: 1000px / 16px * 1em;
 
 $off-black: #4d4d4d;
 $off-white: #f7f7f7;
@@ -22,6 +22,7 @@ $blue: #8FCAFF;
 $blue-dark: #1E71FE;
 $gray: #808285;
 $off-white: #F7F7F7;
+$red: #D95719;
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600|Montserrat:900,400);
 $header-font-family: "Montserrat", Georgia, serif;
