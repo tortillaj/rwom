@@ -37,14 +37,15 @@ get_header(); ?>
               <div class="module-slides__slide">
                 <a class="module-slides__link" href="/how-it-works">
                   <div class="module-slides__front">
-                  <?php echo $module['image']; ?>
+                    <?php echo $module['image']; ?>
+                    <span class="module-slides__overlay"></span>
+                    <span class="module-slides__title"><?php echo $module['title']; ?></span>
+                    <span class="module-slides__learn-more">Learn More &raquo;</span>
                   </div>
                   <div class="module-slides__back">
-                    <span class="module-slides__title"><?php echo $module['title']; ?></span>
                     <?php if (is_array($module['feature'])): ?>
-                    <!-- span class="module-slides__feature"><?php echo $module['feature']['feature']; ?></span -->
+                    <span class="module-slides__feature"><?php echo implode($module['feature'], ' &bull; '); ?></span>
                     <?php endif; ?>
-                    <span class="module-slides__learn-more">Learn More &raquo;</span>
                   </div>
                 </a>
               </div>
@@ -52,12 +53,7 @@ get_header(); ?>
           </div>
         <?php endif; ?>
 
-          <div class="contact-form">
-            <h2 class="contact-form__title">Find out More!</h2>
-            <div class="contact-form__form">
-              <?php echo $custom_fields['contact_form']; ?>
-            </div>
-          </div>
+
 
       <?php endwhile; ?>
 

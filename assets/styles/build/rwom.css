@@ -410,7 +410,7 @@ th {
 }
 
 .module-slides__image, .module-slides__front {
-  height: 169px;
+  height: 250px;
   width: 300px;
 }
 
@@ -933,7 +933,7 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
 }
 .module-slides__slide {
   width: 300px;
-  height: 319px;
+  height: 400px;
   overflow: hidden;
   padding: 5px;
 }
@@ -944,7 +944,7 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
 }
 @media (min-width: 75em) {
   .module-slides__slide {
-    height: 169px;
+    height: 250px;
     -webkit-perspective: 1000;
             perspective: 1000;
     position: relative;
@@ -971,15 +971,46 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
 .module-slides__title {
   display: block;
   text-align: center;
+  z-index: 5;
+  color: white;
+  padding: 0 20px;
 }
-.module-slides__feature, .module-slides__learn-more {
+.module-slides__overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+}
+.module-slides__learn-more {
+  font-size: 15px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  display: block;
+  text-align: center;
+  z-index: 5;
+  color: white;
+}
+.module-slides__feature {
+  font-size: 14px;
+  font-size: 1.4rem;
   display: block;
   text-align: center;
 }
 .module-slides__image {
+  position: absolute;
+  top: 0;
+  left: 0;
   max-width: 100% !important;
   -webkit-transition: all 0.3s;
           transition: all 0.3s;
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
 }
 .module-slides__link {
   display: block;
@@ -992,6 +1023,19 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
 .module-slides__front {
   -webkit-transition: all 0.3s;
           transition: all 0.3s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media (min-width: 75em) {
   .module-slides__front {
@@ -1015,7 +1059,7 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
 }
 @media (min-width: 75em) {
   .module-slides__back {
-    height: 169px;
+    height: 250px;
     -webkit-transform: rotateY(-180deg);
             transform: rotateY(-180deg);
     position: absolute;

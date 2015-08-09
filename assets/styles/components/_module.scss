@@ -87,18 +87,45 @@
     @extend .h3;
     display: block;
     text-align: center;
+    z-index: 5;
+    color: white;
+    padding: 0 20px;
   }
 
-  &__feature,
+  &__overlay {
+    background-color: rgba(black, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+  }
+
   &__learn-more {
+    @include rem(font-size, 15px);
+    font-weight: 400;
+    display: block;
+    text-align: center;
+    z-index: 5;
+    color: white;
+  }
+
+  &__feature {
+    @include rem(font-size, 14px);
     display: block;
     text-align: center;
   }
 
   &__image {
     @extend %module-grid-image;
+    position: absolute;
+    top: 0;
+    left: 0;
     max-width: 100% !important;
     transition: all 0.3s;
+    filter: blur(4px);
+    transform: scale(1.2);
   }
 
   &__link {
@@ -114,6 +141,9 @@
   &__front {
     @extend %module-grid-image;
     transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     @include breakpoint($bp-desktop) {
       transform: rotateY(0deg);
