@@ -654,11 +654,6 @@ input, textarea {
   border-left: 5px solid #236082;
   background-color: #F7F7F7;
 }
-input:focus, input:active, textarea:focus, textarea:active {
-  box-shadow: 0 0 2px rgba(35, 96, 130, 0.8);
-  background-color: #4099cb;
-  color: #F7F7F7;
-}
 
 input[type=submit] {
   -webkit-appearance: none;
@@ -666,7 +661,7 @@ input[type=submit] {
   appearance: none;
   border: none;
   background-color: #236082;
-  color: #4d4d4d;
+  color: white;
   text-transform: uppercase;
 }
 

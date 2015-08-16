@@ -8,12 +8,6 @@ input, textarea {
   border: 1px solid $blue;
   border-left: 5px solid $blue;
   background-color: $off-white;
-
-  &:focus, &:active {
-    box-shadow: 0 0 2px rgba($blue, 0.8);
-    background-color: lighten($blue, 20%);
-    color: $off-white;
-  }
 }
 
 input[type=submit] {
@@ -22,7 +16,7 @@ input[type=submit] {
   appearance: none;
   border: none;
   background-color: $blue;
-  color: $off-black;
+  color: white;
   text-transform: uppercase;
 }
 
