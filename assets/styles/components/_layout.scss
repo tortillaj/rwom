@@ -18,7 +18,7 @@ body {
     }
 
     @include breakpoint($bp-large) {
-      max-width: $content-width + 60px;
+      max-width: $site-width + 60px;
       padding: 20px 30px;
       margin-top: -100px;
     }

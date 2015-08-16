@@ -21,6 +21,9 @@
     @extend %site-max-width;
     position: relative;
     height: $header-height;
+    @include breakpoint($bp-large) {
+    	max-width: $site-width;
+    }
   }
 
   &__bar {
@@ -37,7 +40,7 @@
     height: 92px;
     position: absolute;
     top: $header-height / 2 - 10px;
-    left: 0;
+    left: 25px;
     z-index: 300;
     color: $off-black;
   }

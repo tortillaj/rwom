@@ -109,7 +109,7 @@ var RWOM = {};
       var pattern = Trianglify({
         width: window.innerWidth,
         height: 530,
-        x_colors: 'PuBu'
+        x_colors: ['#ffffff', '#85ACB3', '#236082']
       });
       $('canvas').remove();
       $('.site-main__header').append(pattern.canvas());

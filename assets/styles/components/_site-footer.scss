@@ -6,5 +6,8 @@
 
   &__inner {
     @extend %site-max-width;
+    @include breakpoint($bp-desktop) {
+    	max-width: $site-width;
+    }
   }
 }
