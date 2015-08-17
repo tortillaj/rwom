@@ -943,7 +943,7 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
 }
 @media (min-width: 62.5em) {
   .module-slides__slide {
-    height: 250px;
+    height: 220px;
     -webkit-perspective: 1000;
             perspective: 1000;
     position: relative;
@@ -1041,14 +1041,14 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
 @media (min-width: 62.5em) {
   .module-slides__image {
     width: 390px;
-    height: 250px;
+    height: 220px;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
     max-width: 100% !important;
-    -webkit-transition: all 0.3s;
-            transition: all 0.3s;
+    -webkit-transition: all 0.5s;
+            transition: all 0.5s;
     -webkit-filter: blur(4px);
             filter: blur(4px);
     -webkit-transform: scale(1.2);
@@ -1069,9 +1069,9 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
 }
 @media (min-width: 62.5em) {
   .module-slides__front {
-    height: 250px;
-    -webkit-transition: all 0.3s;
-            transition: all 0.3s;
+    height: 220px;
+    -webkit-transition: all 0.4s;
+            transition: all 0.4s;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1107,9 +1107,9 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
 }
 @media (min-width: 62.5em) {
   .module-slides__back {
-    height: 250px;
-    -webkit-transition: all 0.2s;
-            transition: all 0.2s;
+    height: 220px;
+    -webkit-transition: all 0.5s;
+            transition: all 0.5s;
     -webkit-transform: rotateY(-180deg);
             transform: rotateY(-180deg);
     position: absolute;

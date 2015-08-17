@@ -170,7 +170,7 @@
 			top: 0;
 			left: 0;
 			max-width: 100% !important;
-			transition: all 0.3s;
+			transition: all 0.5s;
 			filter: blur(4px);
 			transform: scale(1.2);
 		}
@@ -190,7 +190,7 @@
 		width: $module-grid-image-width;
 		@include breakpoint($bp-desktop) {
 			height: $module-grid-image-height;
-			transition: all 0.3s;
+			transition: all 0.4s;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -215,7 +215,7 @@
 
 		@include breakpoint($bp-desktop) {
 			height: $module-grid-image-height;
-			transition: all 0.2s;
+			transition: all 0.5s;
 			transform: rotateY(-180deg);
 			position: absolute;
 			top: 0;
