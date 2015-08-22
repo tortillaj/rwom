@@ -24,6 +24,7 @@ function rwom_setup()
 	add_image_size( 'medium-slide', 430, 242 );
 	add_image_size( 'small-slide', 300, 250 );
 	add_image_size( 'module-image', 290, 250, true );
+  add_image_size( 'module-icon', 50, 50, true );
 }
 
 add_action( 'after_setup_theme', 'rwom_setup' );
@@ -78,12 +79,15 @@ function rwom_get_modules()
 					$features[] = $value['feature'];
 				}
 			}
+      $icon = get_field('icon', get_the_ID());
+      $icon_img = (!empty($icon)) ? wp_get_attachment_image( $icon['ID'], 'module-image', false, array('class' => 'module-slides__icon') ) : '';
 			$modules[] = array(
 				'id' => get_the_ID(),
 				'title' => get_the_title(),
 				'link' => get_permalink(),
 				'image' => get_the_post_thumbnail(get_the_ID(), 'module-image', array('class' => 'module-slides__image')),
-				'feature' => $features
+				'feature' => $features,
+        'icon' => $icon_img
 			);
 		}
 	}

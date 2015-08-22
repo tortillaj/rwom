@@ -41,6 +41,9 @@ get_header(); ?>
 										<span class="module-slides__overlay"></span>
 										<span class="module-slides__title"><?php echo $module['title']; ?></span>
 										<!-- span class="module-slides__learn-more">Learn More &raquo;</span -->
+                    <?php if (!empty($module['icon'])): ?>
+                      <?php echo $module['icon']; ?>
+                    <?php endif; ?>
 									</div>
 									<div class="module-slides__back">
 										<?php if (is_array($module['feature'])): ?>

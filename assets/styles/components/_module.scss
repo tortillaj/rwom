@@ -117,7 +117,7 @@
 		display: block;
 		text-align: center;
 		z-index: 5;
-		padding: 25px 25px 0;
+		padding: 0 25px;
 		color: black;
 		margin: 0;
 		@include breakpoint($bp-desktop) {
@@ -186,19 +186,26 @@
 		}
 	}
 
+  &__icon {
+    margin: 10px 0;
+  }
+
 	&__front {
 		width: $module-grid-image-width;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0;
 		@include breakpoint($bp-desktop) {
 			height: $module-grid-image-height;
 			transition: all 0.4s;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
 			transform: rotateY(0deg);
 			position: absolute;
 			top: 0;
 			left: 0;
 			z-index: 2;
+      padding: 0;
 		}
 	}
 
