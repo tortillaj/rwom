@@ -30,8 +30,8 @@
   &.home {
     .site-main__header {
       @include breakpoint($bp-medium) {
-        background: url('../../images/characters-cropped.png') bottom center no-repeat transparent;
-        background-size: 900px;
+        //background: url('../../images/characters-cropped.png') bottom center no-repeat transparent;
+        //background-size: 900px;
       }
     }
 

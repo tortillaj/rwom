@@ -114,6 +114,11 @@ var RWOM = {};
       $('canvas').remove();
       $('.site-main__header').append(pattern.canvas());
     }));
+    $('.module-slides').isotope();
+    $('.module-filters li').on('click', function(e) {
+      $group = $(this).attr('data-group');
+      $group = ($group === 'all') ? '*' : '.' + $group;
+      $('.module-slides').isotope({ filter: $group });
+    });
   });
-
 })(jQuery);

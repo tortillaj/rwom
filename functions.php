@@ -23,7 +23,7 @@ function rwom_setup()
 	add_image_size( 'large-slide', 960, 540 );
 	add_image_size( 'medium-slide', 430, 242 );
 	add_image_size( 'small-slide', 300, 250 );
-	add_image_size( 'module-image', 290, 250, true );
+	add_image_size( 'module-image', 300, 220, true );
   add_image_size( 'module-icon', 50, 50, true );
 }
 
@@ -67,7 +67,7 @@ function rwom_get_modules()
 	$query = new WP_Query(array(
 														 'post_type' => 'module',
 														 'posts_per_page' => -1,
-														 'order' => 'ASC'
+														 'orderby' => 'rand'
 												));
 	if ($query->have_posts()) {
 		while ($query->have_posts()) {
@@ -79,6 +79,13 @@ function rwom_get_modules()
 					$features[] = $value['feature'];
 				}
 			}
+      $math = wp_get_post_terms(get_the_ID(), 'math');
+      $classes = (strlen(get_the_title()) > 35) ? 'double' : 'single';
+      if (count($math) > 0) {
+        foreach ($math as $m) {
+          $classes .= ' ' . $m->slug;
+        }
+      }
       $icon = get_field('icon', get_the_ID());
       $icon_img = (!empty($icon)) ? wp_get_attachment_image( $icon['ID'], 'module-image', false, array('class' => 'module-slides__icon') ) : '';
 			$modules[] = array(
@@ -87,9 +94,21 @@ function rwom_get_modules()
 				'link' => get_permalink(),
 				'image' => get_the_post_thumbnail(get_the_ID(), 'module-image', array('class' => 'module-slides__image')),
 				'feature' => $features,
-        'icon' => $icon_img
+        'icon' => $icon_img,
+        'class' => $classes
 			);
 		}
 	}
 	return $modules;
+}
+
+function rwom_get_groupings()
+{
+  $math = get_terms('math');
+  $output = '<ul class="module-filters"><li data-group="all">Show All</li>';
+  foreach ($math as $m) {
+    $output .= '<li data-group="' . $m->slug . '">' . $m->name . '</li>';
+  }
+  $output .= '</ul>';
+  return $output;
 }
