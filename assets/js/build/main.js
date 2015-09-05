@@ -113,16 +113,16 @@ var RWOM = {};
       });
       $('canvas').remove();
       $('.site-main__header').append(pattern.canvas());
-      $('.module-slides').isotope();
+      $('.module-slides').isotope({ layoutMode: 'packery' });
     }));
   });
 
   $(window).load(function(e) {
-    $('.module-slides').isotope();
+    $('.module-slides').isotope({ layoutMode: 'packery' });
     $('.module-filters li').on('click', function(e) {
       var $group = $(this).attr('data-group');
       $group = ($group === 'all') ? '*' : '.' + $group;
-      $('.module-slides').isotope({ filter: $group });
+      $('.module-slides').isotope({ filter: $group, layoutMode: 'packery' });
     });
   });
 })(jQuery);

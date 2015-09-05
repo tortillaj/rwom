@@ -46,7 +46,8 @@ gulp.task('plugins', function () {
   return gulp.src([
       'assets/js/source/scripts.js',
       'assets/js/vendor/trianglify.js',
-      'assets/js/vendor/isotope.pkgd.min.js'
+      'assets/js/vendor/isotope.pkgd.min.js',
+      'assets/js/vendor/packery-mode.pkgd.min.js'
     ])
     .pipe(plugins.concat('scripts.js'))
     .pipe(gulp.dest('assets/js/build'))
