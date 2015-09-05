@@ -48,7 +48,7 @@
 	&__slide {
 		width: $module-grid-image-width-single;
 		overflow: hidden;
-		padding: 5px;
+		padding: 10px;
 
 		@include breakpoint($bp-desktop) {
 			//height: $module-grid-image-height;
@@ -219,10 +219,19 @@
   margin: 0;
   padding: 5px 10px;
   li {
+    padding: 5px 20px;
     list-style-type: none;
     display: inline-block;
-    margin: 5px 20px 5px 0;
+    margin: 5px 10px 5px 0;
     font-weight: bold;
-    cursor: pointer;
+
+    &:nth-child(n + 2) {
+      transition: all .5s ease-in-out;
+      background-color: #ccc;
+      cursor: pointer;
+      &:hover {
+        background-color: #bbb;
+      }
+    }
   }
 }

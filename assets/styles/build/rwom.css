@@ -921,7 +921,7 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
 .module-slides__slide {
   width: 300px;
   overflow: hidden;
-  padding: 5px;
+  padding: 10px;
 }
 @media (min-width: 62.5em) {
   .module-slides__slide.double {
@@ -1068,11 +1068,20 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
   padding: 5px 10px;
 }
 .module-filters li {
+  padding: 5px 20px;
   list-style-type: none;
   display: inline-block;
-  margin: 5px 20px 5px 0;
+  margin: 5px 10px 5px 0;
   font-weight: bold;
+}
+.module-filters li:nth-child(n + 2) {
+  -webkit-transition: all .5s ease-in-out;
+          transition: all .5s ease-in-out;
+  background-color: #ccc;
   cursor: pointer;
+}
+.module-filters li:nth-child(n + 2):hover {
+  background-color: #bbb;
 }
 
 .main-menu {
