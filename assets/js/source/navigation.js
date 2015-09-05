@@ -117,7 +117,7 @@ var RWOM = {};
     }));
   });
 
-  $(window).on('load', function(e) {
+  $(document).on('load', function(e) {
     $('.module-slides').isotope();
     $('.module-filters li').on('click', function(e) {
       var $group = $(this).attr('data-group');
