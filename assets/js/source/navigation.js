@@ -113,7 +113,11 @@ var RWOM = {};
       });
       $('canvas').remove();
       $('.site-main__header').append(pattern.canvas());
+      $('.module-slides').isotope();
     }));
+  });
+
+  $(window).on('load', function(e) {
     $('.module-slides').isotope();
     $('.module-filters li').on('click', function(e) {
       var $group = $(this).attr('data-group');
