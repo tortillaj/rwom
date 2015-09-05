@@ -967,7 +967,6 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
 @media (min-width: 62.5em) {
   .module-slides__title {
     padding: 0 25px;
-    margin-bottom: 10px;
     font-size: 25px;
     font-size: 2.5rem;
   }
@@ -1073,6 +1072,7 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
   display: inline-block;
   margin: 5px 20px 5px 0;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .main-menu {
