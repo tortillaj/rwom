@@ -3,9 +3,10 @@ $content-width: 925px;
 $header-height: 80px;
 $page-header-height: 200px;
 
+$module-grid-image-width: 300px;
 $module-grid-image-width-double: 600px;
 $module-grid-image-width-single: 300px;
-$module-grid-image-height: 220px;
+$module-grid-image-height: 200px;
 
 $bp-small: 480px / 16px * 1em;
 $bp-medium: 768px / 16px * 1em;
@@ -29,7 +30,6 @@ $yellow: #C7B100;
 $purple: #6E6C80;
 $pale-blue: #85ACB3;
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600|Montserrat:900,400);
 $header-font-family: "Montserrat", Georgia, serif;
 $body-text-font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
 $base-font-color: $off-black;

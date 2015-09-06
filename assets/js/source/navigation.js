@@ -100,19 +100,19 @@ var RWOM = {};
   $(document).ready(function() {
     var pattern = Trianglify({
       width: window.innerWidth,
-      height: 530,
+      height: window.outerHeight,
       x_colors: 'PuBu'
     });
-    $('.site-main__header').append(pattern.canvas());
+    $('body').append(pattern.canvas());
 
     $(window).on('resize', debounce(function(e) {
       var pattern = Trianglify({
         width: window.innerWidth,
-        height: 530,
-        x_colors: ['#ffffff', '#85ACB3', '#236082']
+        height: window.outerHeight,
+        x_colors: 'PuBu'
       });
       $('canvas').remove();
-      $('.site-main__header').append(pattern.canvas());
+      $('body').append(pattern.canvas());
       $('.module-slides').isotope({ layoutMode: 'packery' });
     }));
   });

@@ -11,7 +11,8 @@ var gulp = require('gulp')
 gulp.task('serve', ['styles'], function () {
 
   browserSync.init({
-    proxy: "http://rwom.dev"
+    proxy: "http://rwom.dev",
+    injectChanges: true
   });
 
   gulp.watch('assets/styles/**/*.scss', ['styles']);

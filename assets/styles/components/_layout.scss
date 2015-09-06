@@ -14,13 +14,11 @@ body {
 
     @include breakpoint($bp-medium) {
       max-width: 96%;
-      margin-top: -100px;
     }
 
     @include breakpoint($bp-large) {
-      max-width: $site-width + 60px;
+      //max-width: $site-width + 60px;
       padding: 50px 30px;
-      margin-top: -135px;
     }
   }
 }
@@ -31,5 +29,28 @@ body {
   padding: 0 20px;
   @include breakpoint($bp-large) {
     padding: 0;
+  }
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+}
+
+.background-image {
+  @include breakpoint($bp-desktop) {
+    display: block;
+    width: 100vw;
+    z-index: -1;
+    height: 100vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('../../images/characters-cropped.png') bottom center no-repeat transparent;
   }
 }

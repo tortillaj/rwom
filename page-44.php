@@ -16,10 +16,6 @@ $custom_fields = get_fields();
 get_header(); ?>
 
 <main class="site-main home" role="main">
-	<header class="site-main__header">
-		<div class="site-main__header-inner">
-		</div>
-	</header>
 
 	<div class="site-main__inner">
 		<h1 class="page-header__title"><?php the_title() ?></h1>
@@ -69,5 +65,5 @@ get_header(); ?>
 		<?php endif; ?>
 	</div>
 </main><!-- #main -->
-
+<span class="background-image"></span>
 <?php get_footer(); ?>

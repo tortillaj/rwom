@@ -28,10 +28,9 @@
   }
 
   &.home {
-    .site-main__header {
+    .site-main__inner {
       @include breakpoint($bp-medium) {
-        //background: url('../../images/characters-cropped.png') bottom center no-repeat transparent;
-        //background-size: 900px;
+        background-color: rgba(255,255,255,0.5);
       }
     }
 

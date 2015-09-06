@@ -1,218 +1,238 @@
 .module-details {
-	display: table;
-	width: 100%;
-	padding: 10px 20px;
+  display: table;
+  width: 100%;
+  padding: 10px 20px;
 
-	&__image {
-		@include breakpoint($bp-medium) {
-			display: table-cell;
-			width: 50%;
-			vertical-align: top;
-			padding: 10px 10px 10px 20px;
-		}
-		img {
-			max-width: 100% !important;
-			height: auto !important;
-		}
-	}
-	&__features {
-		margin: 0;
-		padding: 0;
-		@include breakpoint($bp-medium) {
-			display: table-cell;
-			width: 50%;
-			vertical-align: top;
-			padding: 10px 20px 10px 10px;
-		}
-	}
-	&__feature {
-		list-style: none;
-		text-align: left;
-		padding: 0;
-		margin: 0 0 0.5em;
-	}
+  &__image {
+    @include breakpoint($bp-medium) {
+      display: table-cell;
+      width: 50%;
+      vertical-align: top;
+      padding: 10px 10px 10px 20px;
+    }
+    img {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+  }
+  &__features {
+    margin: 0;
+    padding: 0;
+    @include breakpoint($bp-medium) {
+      display: table-cell;
+      width: 50%;
+      vertical-align: top;
+      padding: 10px 20px 10px 10px;
+    }
+  }
+  &__feature {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 0.5em;
+  }
 }
 
 .module-slides {
-	//display: flex;
-	//flex-direction: row;
-	//flex-wrap: wrap;
-	//justify-content: center;
-	//align-items: flex-start;
-  margin: 0 auto;
-  width: $module-grid-image-width-single;
-  @include breakpoint($bp-medium) {
-    width: 100%;
+
+  &__slide {
+    width: $module-grid-image-width;
+    overflow: hidden;
+    padding: 10px;
+
+    @include breakpoint($bp-desktop) {
+      height: $module-grid-image-height;
+
+      &:hover {
+        .module-slides__front {
+          transform: rotateY(180deg);
+        }
+        .module-slides__back {
+          transform: rotateY(0deg);
+          z-index: 2;
+        }
+      }
+    }
+    .module-slides__front,
+    .module-slides__back {
+      background-color: rgba($blue, 0.8);
+    }
+
+    &:nth-child(7n + 2) {
+      .module-slides__front,
+      .module-slides__back {
+        background-color: rgba($yellow, 0.8);
+      }
+    }
+
+    &:nth-child(7n + 3) {
+      .module-slides__front,
+      .module-slides__back {
+        background-color: rgba($green, 0.8);
+      }
+    }
+
+    &:nth-child(7n + 4) {
+      .module-slides__front,
+      .module-slides__back {
+        background-color: rgba($pale-blue, 0.8);
+      }
+    }
+
+    &:nth-child(7n + 5) {
+      .module-slides__front,
+      .module-slides__back {
+        background-color: rgba($purple, 0.8);
+      }
+    }
+
+    &:nth-child(7n + 6) {
+      .module-slides__front,
+      .module-slides__back {
+        background-color: rgba($turquoise, 0.8);
+      }
+    }
+
+    &:nth-child(7n + 7) {
+      .module-slides__front,
+      .module-slides__back {
+        background-color: rgba($red, 0.8);
+      }
+    }
   }
 
-	&__slide {
-		width: $module-grid-image-width-single;
-		overflow: hidden;
-		padding: 10px;
+  &__title {
+    @extend .h2;
+    display: block;
+    text-align: center;
+    z-index: 5;
+    padding: 0 25px;
+    color: black;
+    margin: 0;
+    @include breakpoint($bp-desktop) {
+      //color: white;
+      padding: 0 25px;
+      margin-bottom: 10px;
+      font-size: 25px;
+      font-size: 2.5rem;
+    }
+  }
 
-		@include breakpoint($bp-desktop) {
-			//height: $module-grid-image-height;
-			//perspective: 1000;
-			//position: relative;
+  &__overlay {
+    display: none;
+    @include breakpoint($bp-desktop) {
+      //background-color: rgba(black, 0.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: block;
+    }
+  }
 
-      &.double {
-        width: $module-grid-image-width-double;
+  &__learn-more {
+    display: none;
+    @include breakpoint($bp-desktop) {
+      @include rem(font-size, 15px);
+      font-weight: 400;
+      display: block;
+      text-align: center;
+      z-index: 5;
+      color: black;
+    }
+  }
+
+  &__feature {
+    @include rem(font-size, 14px);
+    display: block;
+    text-align: center;
+  }
+
+  &__image {
+    display: none;
+    @include breakpoint($bp-desktop) {
+      width: $module-grid-image-width;
+      height: $module-grid-image-height;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 100% !important;
+      transition: all 0.5s;
+      filter: blur(4px);
+      transform: scale(1.2);
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    perspective: 1000;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      text-decoration: none;
+
+      .module-slides__back {
+        opacity: 1 !important;
       }
-
-			&:hover {
-				.module-slides__front {
-					//transform: rotateY(180deg);
-				}
-				.module-slides__back {
-					//transform: rotateY(0deg);
-					//z-index: 2;
-				}
-			}
-		}
-		.module-slides__front,
-		.module-slides__back {
-			background-color: $blue;
-		}
-
-		&:nth-child(7n + 2) {
-			.module-slides__front,
-			.module-slides__back {
-				background-color: $yellow;
-			}
-		}
-
-		&:nth-child(7n + 3) {
-			.module-slides__front,
-			.module-slides__back {
-				background-color: $green;
-			}
-		}
-
-		&:nth-child(7n + 4) {
-			.module-slides__front,
-			.module-slides__back {
-				background-color: $pale-blue;
-			}
-		}
-
-		&:nth-child(7n + 5) {
-			.module-slides__front,
-			.module-slides__back {
-				background-color: $purple;
-			}
-		}
-
-		&:nth-child(7n + 6) {
-			.module-slides__front,
-			.module-slides__back {
-				background-color: $turquoise;
-			}
-		}
-
-		&:nth-child(7n + 7) {
-			.module-slides__front,
-			.module-slides__back {
-				background-color: $red;
-			}
-		}
-	}
-
-	&__title {
-		@extend .h2;
-		display: block;
-		text-align: center;
-		z-index: 5;
-		padding: 0 25px;
-		color: black;
-		margin: 0;
-		@include breakpoint($bp-desktop) {
-			padding: 0 25px;
-			font-size: 25px;
-			font-size: 2.5rem;
-		}
-	}
-
-	&__overlay {
-		display: none;
-		@include breakpoint($bp-desktop) {
-			//background-color: rgba(black, 0.2);
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			display: block;
-		}
-	}
-
-	&__learn-more {
-		display: none;
-		@include breakpoint($bp-desktop) {
-			@include rem(font-size, 15px);
-			font-weight: 400;
-			display: block;
-			text-align: center;
-			z-index: 5;
-			color: black;
-		}
-	}
-
-	&__feature {
-		@include rem(font-size, 14px);
-		display: block;
-		text-align: left;
-    padding: 10px;
-    margin: 0 10px;
-    border-top: 1px solid black;
-	}
-
-	&__image {
-		display: none;
-		@include breakpoint($bp-desktop) {
-			display: block;
-      padding: 5px;
-		}
-	}
-
-	&__link {
-		display: block;
-		width: 100%;
-		height: 100%;
-
-		&:hover {
-			text-decoration: none;
-
-      .module-slides__overlay {
-        background-color: rgba(white, 0.1);
+      .module-slides__front {
+        opacity: 0 !important;
       }
-		}
-	}
+    }
+  }
 
   &__icon {
     margin: 10px 0;
   }
 
-	&__front {
-		width: 100%;
+  &__front {
+    width: $module-grid-image-width - 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 25px 0;
-    //min-height: $module-grid-image-height;
-	}
+    @include breakpoint($bp-desktop) {
+      height: $module-grid-image-height - 20px;
+      transition: all 0.4s;
+      transform: rotateY(0deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      padding: 0;
+    }
+  }
 
-	&__back {
-		width: 100%;
-		color: black;
-		text-align: center;
+  &__back {
+    color: black;
+    padding: 0 10px 10px;
+    text-align: center;
+    width: $module-grid-image-width - 20px;
 
-		@include breakpoint($bp-medium) {
-			font-size: 19px;
-			font-size: 1.9rem;
-		}
+    @include breakpoint($bp-medium) {
+      font-size: 19px;
+      font-size: 1.9rem;
+    }
 
-	}
+    @include breakpoint($bp-desktop) {
+      height: $module-grid-image-height - 20px;
+      transition: all 0.5s;
+      transform: rotateY(-180deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 10px;
+      opacity: 0;
+    }
+  }
 }
 
 .module-filters {
