@@ -3,9 +3,7 @@ $content-width: 925px;
 $header-height: 80px;
 $page-header-height: 200px;
 
-$module-grid-image-width: 300px;
-$module-grid-image-width-double: 600px;
-$module-grid-image-width-single: 300px;
+$module-grid-image-width: 200px;
 $module-grid-image-height: 200px;
 
 $bp-small: 480px / 16px * 1em;
@@ -29,9 +27,10 @@ $turquoise: #3C9EAB;
 $yellow: #C7B100;
 $purple: #6E6C80;
 $pale-blue: #85ACB3;
+$purple-dark: #393B47;
 
-$header-font-family: "Montserrat", Georgia, serif;
-$body-text-font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+$header-font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+$body-text-font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
 $base-font-color: $off-black;
 $base-font-size: 62.5%;
 $base-line-height: 1.5;

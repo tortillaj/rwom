@@ -34,11 +34,13 @@
 }
 
 .module-slides {
+  max-width: 1200px;
+  margin: 0 auto;
 
   &__slide {
     width: $module-grid-image-width;
     overflow: hidden;
-    padding: 10px;
+    //padding: 10px;
 
     @include breakpoint($bp-desktop) {
       height: $module-grid-image-height;
@@ -55,66 +57,72 @@
     }
     .module-slides__front,
     .module-slides__back {
-      background-color: rgba($blue, 0.8);
+      background-color: rgba($blue, 0.9);
     }
 
-    &:nth-child(7n + 2) {
+    &:nth-child(8n + 2) {
       .module-slides__front,
       .module-slides__back {
-        background-color: rgba($yellow, 0.8);
+        background-color: rgba($yellow, 0.9);
       }
     }
 
-    &:nth-child(7n + 3) {
+    &:nth-child(8n + 3) {
       .module-slides__front,
       .module-slides__back {
-        background-color: rgba($green, 0.8);
+        background-color: rgba($green, 0.9);
       }
     }
 
-    &:nth-child(7n + 4) {
+    &:nth-child(8n + 4) {
       .module-slides__front,
       .module-slides__back {
-        background-color: rgba($pale-blue, 0.8);
+        background-color: rgba($pale-blue, 0.9);
       }
     }
 
-    &:nth-child(7n + 5) {
+    &:nth-child(8n + 5) {
       .module-slides__front,
       .module-slides__back {
-        background-color: rgba($purple, 0.8);
+        background-color: rgba($purple, 0.9);
       }
     }
 
-    &:nth-child(7n + 6) {
+    &:nth-child(8n + 6) {
       .module-slides__front,
       .module-slides__back {
-        background-color: rgba($turquoise, 0.8);
+        background-color: rgba($turquoise, 0.9);
       }
     }
 
-    &:nth-child(7n + 7) {
+    &:nth-child(8n + 7) {
       .module-slides__front,
       .module-slides__back {
-        background-color: rgba($red, 0.8);
+        background-color: rgba($red, 0.9);
+      }
+    }
+
+    &:nth-child(8n + 8) {
+      .module-slides__front,
+      .module-slides__back {
+        background-color: rgba($purple-dark, 0.9);
       }
     }
   }
 
   &__title {
-    @extend .h2;
+    @extend .h3;
     display: block;
     text-align: center;
     z-index: 5;
     padding: 0 25px;
-    color: black;
+    color: white;
     margin: 0;
+    font-weight: 400;
     @include breakpoint($bp-desktop) {
       //color: white;
       padding: 0 25px;
       margin-bottom: 10px;
-      font-size: 25px;
-      font-size: 2.5rem;
     }
   }
 
@@ -139,7 +147,7 @@
       display: block;
       text-align: center;
       z-index: 5;
-      color: black;
+      color: white;
     }
   }
 
@@ -173,16 +181,7 @@
     position: relative;
     overflow: hidden;
 
-    &:hover {
-      text-decoration: none;
 
-      .module-slides__back {
-        opacity: 1 !important;
-      }
-      .module-slides__front {
-        opacity: 0 !important;
-      }
-    }
   }
 
   &__icon {
@@ -190,14 +189,16 @@
   }
 
   &__front {
-    width: $module-grid-image-width - 20px;
+    //width: $module-grid-image-width - 20px;
+    width: $module-grid-image-width;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 25px 0;
     @include breakpoint($bp-desktop) {
-      height: $module-grid-image-height - 20px;
+      //height: $module-grid-image-height - 20px;
+      height: $module-grid-image-height;
       transition: all 0.4s;
       transform: rotateY(0deg);
       position: absolute;
@@ -209,18 +210,15 @@
   }
 
   &__back {
-    color: black;
+    color: white;
     padding: 0 10px 10px;
     text-align: center;
-    width: $module-grid-image-width - 20px;
-
-    @include breakpoint($bp-medium) {
-      font-size: 19px;
-      font-size: 1.9rem;
-    }
+    //width: $module-grid-image-width - 20px;
+    width: $module-grid-image-width;
 
     @include breakpoint($bp-desktop) {
-      height: $module-grid-image-height - 20px;
+      //height: $module-grid-image-height - 20px;
+      height: $module-grid-image-height;
       transition: all 0.5s;
       transform: rotateY(-180deg);
       position: absolute;
@@ -233,10 +231,27 @@
       opacity: 0;
     }
   }
+
+
+  &.desktop {
+    .module-slides__link {
+      &:hover {
+        text-decoration: none;
+
+        .module-slides__back {
+          opacity: 1 !important;
+        }
+        .module-slides__front {
+          opacity: 0 !important;
+        }
+      }
+    }
+  }
 }
 
 .module-filters {
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 5px 10px;
   li {
     padding: 5px 20px;

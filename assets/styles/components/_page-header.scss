@@ -1,5 +1,11 @@
 .page-header {
+
+  &__title {
+    color: black;
+  }
+
   &__text {
+    color: black;
     ul {
       margin: 0;
       padding: 0;
@@ -13,8 +19,9 @@
     a {
       display: inline-block;
       padding: 10px 20px;
-      border: 1px solid $blue;
+      border: 1px solid $purple-dark;
       text-decoration: none;
+      color: $purple-dark;
     }
   }
 }

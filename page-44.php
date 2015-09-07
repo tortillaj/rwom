@@ -30,7 +30,7 @@ get_header(); ?>
 				<?php $modules = rwom_get_modules(); ?>
 
 				<?php if ( ! empty($modules) ): ?>
-					<div class="module-slides">
+					<div class="module-slides<?php echo (wp_is_mobile()) ? ' mobile' : ' desktop'; ?>">
 						<?php foreach ( $modules as $module ): ?>
 							<div class="module-slides__slide <?php echo $module['class']; ?>">
 								<a class="module-slides__link" href="/how-it-works">
@@ -44,7 +44,7 @@ get_header(); ?>
 									</div>
 									<div class="module-slides__back">
 										<?php if (is_array($module['feature']) && count($module['feature']) > 0): ?>
-										<span class="module-slides__feature"><?php echo implode($module['feature'], ' &bull; '); ?></span>
+										<span class="module-slides__feature"><?php echo substr(implode($module['feature'], ' &bull; '), 0, 160); ?></span>
 										<?php endif; ?>
 									</div>
 								</a>
