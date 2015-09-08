@@ -253,20 +253,18 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 5px 10px;
+  text-align: center;
   li {
     padding: 5px 20px;
     list-style-type: none;
     display: inline-block;
     margin: 5px 10px 5px 0;
     font-weight: bold;
-
-    &:nth-child(n + 2) {
-      transition: all .5s ease-in-out;
-      background-color: #ccc;
-      cursor: pointer;
-      &:hover {
-        background-color: #bbb;
-      }
+    transition: all .5s ease-in-out;
+    background-color: #ccc;
+    cursor: pointer;
+    &:hover {
+      background-color: #bbb;
     }
   }
 }

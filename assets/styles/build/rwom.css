@@ -1125,6 +1125,7 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
   max-width: 1200px;
   margin: 0 auto;
   padding: 5px 10px;
+  text-align: center;
 }
 .module-filters li {
   padding: 5px 20px;
@@ -1132,14 +1133,12 @@ body.solid-main-menu .site-header:not(.open) .site-header__hamburger:before, bod
   display: inline-block;
   margin: 5px 10px 5px 0;
   font-weight: bold;
-}
-.module-filters li:nth-child(n + 2) {
   -webkit-transition: all .5s ease-in-out;
           transition: all .5s ease-in-out;
   background-color: #ccc;
   cursor: pointer;
 }
-.module-filters li:nth-child(n + 2):hover {
+.module-filters li:hover {
   background-color: #bbb;
 }
 
@@ -1227,7 +1226,7 @@ body * {
 }
 @media (min-width: 64em) {
   .site-main__inner {
-    padding: 50px 30px;
+    padding: 30px;
   }
 }
 
@@ -1261,7 +1260,8 @@ canvas {
     bottom: 0;
     left: 0;
     right: 0;
-    background: url("../../images/characters-cropped.png") bottom center no-repeat transparent;
+    background: url("../../images/characters-cropped.png") center 260px no-repeat transparent;
+    background-size: 800px;
   }
 }
 
@@ -1296,13 +1296,16 @@ canvas {
 }
 .site-main.home .page-header__title {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 0;
 }
 .site-main.home .page-header__text {
-  margin-bottom: 30px;
+  margin-bottom: 200px;
   text-align: center;
   font-weight: normal;
   padding: 0 30px;
+}
+.site-main.home .page-header__text p {
+  margin: 10px 0;
 }
 .site-main.home .page-header__text a {
   -webkit-transition: all .5s linear;
@@ -1311,7 +1314,7 @@ canvas {
   padding: 10px 20px;
   border: 1px solid #393B47;
   text-decoration: none;
-  margin: 10px 0;
+  margin: 0;
   color: #393B47;
 }
 .site-main.home .page-header__text a:hover {

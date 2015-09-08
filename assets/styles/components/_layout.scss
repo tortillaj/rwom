@@ -18,7 +18,7 @@ body {
 
     @include breakpoint($bp-large) {
       //max-width: $site-width + 60px;
-      padding: 50px 30px;
+      padding: 30px;
     }
   }
 }
@@ -51,6 +51,7 @@ canvas {
     bottom: 0;
     left: 0;
     right: 0;
-    background: url('../../images/characters-cropped.png') bottom center no-repeat transparent;
+    background: url('../../images/characters-cropped.png') center 260px no-repeat transparent;
+    background-size: 800px;
   }
 }
