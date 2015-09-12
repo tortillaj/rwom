@@ -42,7 +42,7 @@ canvas {
 }
 
 .background-image {
-  @include breakpoint($bp-desktop) {
+  @include breakpoint($bp-medium) {
     display: block;
     width: 100vw;
     z-index: -1;

@@ -120,6 +120,10 @@
   &.open {
     height: 100%;
 
+    .site-header__logo {
+      color: white;
+    }
+
     .region--navigation {
       background-color: rgba($blue, 0.95);
     }
