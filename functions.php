@@ -49,7 +49,7 @@ add_action( 'widgets_init', 'rwom_widgets_init' );
  */
 function rwom_scripts()
 {
-	$asset_version = strtotime( '2015-09-10' );
+	$asset_version = strtotime( '2015-09-12' );
 
 	wp_enqueue_style( 'rwom-style', get_template_directory_uri() . '/assets/styles/build/rwom.css', array(), $asset_version );
 
@@ -106,9 +106,12 @@ function rwom_get_groupings()
 {
   $math = get_terms('math');
   $output = '<ul class="module-filters">';
-  foreach ($math as $m) {
-    $output .= '<li data-group="' . $m->slug . '">' . $m->name . '</li>';
-  }
+  //foreach ($math as $m) {
+  //  $output .= '<li data-group="' . $m->slug . '">' . $m->name . '</li>';
+  //}
+  $output .= '<li data-group="pre-algebra">Pre-Algebra</li>';
+  $output .= '<li data-group="elementary-algebra">Elementary Algebra</li>';
+  $output .= '<li data-group="intermediate-algebra">Intermediate Algebra</li>';
   $output .= '<li data-group="all">Show all Modules</li></ul>';
   return $output;
 }
